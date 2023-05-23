@@ -2,7 +2,9 @@ import { Heading, SubHeading } from "@/components/common";
 import { CommonPageFooter } from "@/components/footer";
 import { CategoryList } from "@/components/homePage";
 import { TnC } from "@/components/homePage/TnC";
+import { useStore } from "@/store/store";
 import { DummyApiType } from "@/types/dummyApi";
+import { getData } from "@/utils/api";
 import { Box, Image, Stack, VStack } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -10,17 +12,17 @@ import Head from "next/head";
 export const getStaticProps: GetStaticProps<{
   data: DummyApiType;
 }> = async () => {
-  const res = await fetch(
-    "https://6ca13a92-b734-44be-a3de-9e047346479a.mock.pstmn.io/applicant",
-  );
-
-  const data = (await res.json()) as DummyApiType;
-
+  const data = await getData();
   return { props: { data } };
 };
 
 export default function Home({ data }: { data: DummyApiType }) {
   const { vehicle_info, branding, categories } = data;
+
+  // Set the data in the Zustand store
+  const setData = useStore((state) => state.setData);
+  setData(data);
+
   return (
     <>
       <Head>

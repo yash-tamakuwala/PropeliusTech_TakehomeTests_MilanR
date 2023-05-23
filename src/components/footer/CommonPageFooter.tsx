@@ -19,7 +19,7 @@ export const CommonPageFooter = ({
         textAlign="center"
         spacing={0}
         padding={6}
-        background={{ base: "#E3E3E3", md: "#F7F7F7" }}
+        background={{ base: "#ECECEC", md: "#F7F7F7" }}
       >
         <HelperText>{helperText}</HelperText>
         <HelperText color="#008350" fontWeight={700}>

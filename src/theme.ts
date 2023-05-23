@@ -1,10 +1,15 @@
-import { extendTheme } from "@chakra-ui/react";
+import { defineStyleConfig, extendTheme } from "@chakra-ui/react";
 
 const breakpoints = {
   md: "645px",
 };
 
 const customizedTheme = {
+  colors: {
+    green: {
+      600: "#008350",
+    },
+  },
   styles: {
     global: {
       body: {
