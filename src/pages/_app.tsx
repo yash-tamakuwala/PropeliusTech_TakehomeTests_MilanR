@@ -1,12 +1,14 @@
+import { Footer } from "@/components/footer";
 import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/roboto";
 import type { AppProps } from "next/app";
 import { theme } from "../theme";
-import "@fontsource/roboto";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
+      <Footer />
     </ChakraProvider>
   );
 }

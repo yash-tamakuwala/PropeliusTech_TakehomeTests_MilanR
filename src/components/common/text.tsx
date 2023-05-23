@@ -32,10 +32,12 @@ export const SmallText = ({
   children,
   ...props
 }: PropsWithChildren<TextProps>) => (
-  <ChakraText fontSize={{ base: "13px" }} fontWeight={400} {...props}>
+  <ChakraText fontSize={{ base: "12px" }} fontWeight={400} {...props}>
     {children}
   </ChakraText>
 );
+
+export const Text = ChakraText;
 
 // ----- Custom text components from common text components -----
 export const Heading = ({
@@ -65,8 +67,8 @@ export const HelperText = ({
   ...props
 }: PropsWithChildren<TextProps>) => {
   return (
-    <NormalText color="#686868" {...props}>
+    <Text color="#686868" fontSize="13px" {...props}>
       {children}
-    </NormalText>
+    </Text>
   );
 };
