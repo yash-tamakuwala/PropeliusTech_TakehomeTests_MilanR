@@ -1,8 +1,7 @@
 import { useStore } from "@/store/store";
-import { Box, Button, Stack } from "@chakra-ui/react";
-import { LargeText, LogicalDivider, UploadFile } from "../common";
+import { Button, Stack } from "@chakra-ui/react";
 import { Fragment } from "react";
-import { CommonPageFooter } from "../footer";
+import { LargeText, LogicalDivider, UploadFile } from "../common";
 
 const combinatorialLogicLabelMapping: Record<string, string> = {
   any: "any",
@@ -25,7 +24,7 @@ export const Identity = () => {
     categories: { identity },
   } = data;
 
-  const { status, combinatorial_logic, documents } = identity;
+  const { combinatorial_logic, documents } = identity;
 
   return (
     <Stack padding={6} spacing={"35px"}>
