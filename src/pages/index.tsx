@@ -20,7 +20,10 @@ export default function Home({ data }: { data: DummyApiType }) {
   const { vehicle_info, branding, categories } = data;
 
   // Set the data in the Zustand store
-  const setData = useStore((state) => state.setData);
+  const { setData } = useStore((state) => ({
+    setData: state.setData,
+  }));
+
   setData(data);
 
   return (
